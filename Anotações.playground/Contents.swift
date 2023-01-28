@@ -2,6 +2,7 @@ import UIKit
 
 // Dictionarys
 
+/*
 var products: [Int : String] = [
     1: "airPods Pro",
     2: "Macbook Pro",
@@ -39,3 +40,25 @@ for (key, value) in products {
     print("A chave é \(key) e o valor é \(value)")
 }
 
+*/
+
+// Sets
+//Inserindo valores
+var newSet: Set<Int> = []
+newSet.insert(10)
+newSet.insert(2)
+newSet.insert(4)
+
+print(newSet)
+
+//Removendo um item
+var itemRemoved = newSet.remove(2)
+print(itemRemoved)
+print(newSet)
+
+//Verificando se contain
+print(newSet.contains(4))
+
+//Removendo todos os elementos
+newSet.removeAll()
+print(newSet)
