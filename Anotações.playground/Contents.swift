@@ -40,7 +40,7 @@ for (key, value) in products {
     print("A chave é \(key) e o valor é \(value)")
 }
 
-*/
+
 
 // Sets
 //Inserindo valores
@@ -62,3 +62,81 @@ print(newSet.contains(4))
 //Removendo todos os elementos
 newSet.removeAll()
 print(newSet)
+ */
+
+
+// Funções
+func megaSenaGenerator() {
+    var numbers = 6
+    var result: Set<Int> = []
+    
+    while(numbers > 0) {
+        let generated = Int.random(in: 1...60) // gerar números aleatórios de 1 até 60
+        let res  = result.insert(generated)
+        
+        if(res.inserted) {
+            numbers = numbers - 1
+            print(result)
+        }
+    }
+    
+}
+
+megaSenaGenerator()
+
+func megaSenaGenerator2(total: Int) {
+    var numbers = total
+    var result: Set<Int> = []
+    
+    while(numbers > 0) {
+        let generated = Int.random(in: 1...60) // gerar números aleatórios de 1 até 60
+        let res  = result.insert(generated)
+        
+        if(res.inserted) {
+            numbers = numbers - 1
+            print(result)
+        }
+    }
+}
+
+megaSenaGenerator2(total: 6)
+megaSenaGenerator2(total: 15)
+
+func megaSenaGenerator3(total: Int, maxNumber: Int) {
+    var numbers = total
+    var result: Set<Int> = []
+    
+    while(numbers > 0) {
+        let generated = Int.random(in: 1...maxNumber) // gerar números aleatórios de 1 até 60
+        let res  = result.insert(generated)
+        
+        if(res.inserted) {
+            numbers = numbers - 1
+            print(result)
+        }
+    }
+}
+
+megaSenaGenerator3(total: 6, maxNumber: 50)
+megaSenaGenerator3(total: 15, maxNumber: 60)
+
+print("Exemplo 4")
+
+func megaSenaGenerator4(total: Int, maxNumber: Int) -> Set<Int> {
+    var numbers = total
+    var result: Set<Int> = []
+    
+    while(numbers > 0) {
+        let generated = Int.random(in: 1...maxNumber) // gerar números aleatórios de 1 até 60
+        let res  = result.insert(generated)
+        
+        if(res.inserted) {
+            numbers = numbers - 1
+            print(result)
+        }
+    }
+    return result
+}
+
+let res1 = megaSenaGenerator4(total: 6, maxNumber: 50)
+print(res1)
