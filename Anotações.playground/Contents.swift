@@ -187,25 +187,58 @@ print(newSet)
 
 //MARK: GUARD
 
-func fetchProductById(id: Int) -> String {
-    let dict = [
-        1: "iPhone",
-        2: "Macbook",
-        3: "iPad"
-    ]
-    
-//    //Primeiro se trata a exceção
-//    if let product = dict[id] {
-//        return product
-//    }else {
-//        return "nenhum produto encontrado"
-//    }
-    
-    // Com o guard let o sucesso é lido primeiro
-    guard let product = dict[id] else { return "Nenhum produto encontrado"}
-    
-    return product
+//func fetchProductById(id: Int) -> String {
+//    let dict = [
+//        1: "iPhone",
+//        2: "Macbook",
+//        3: "iPad"
+//    ]
+//
+////    //Primeiro se trata a exceção
+////    if let product = dict[id] {
+////        return product
+////    }else {
+////        return "nenhum produto encontrado"
+////    }
+//
+//    // Com o guard let o sucesso é lido primeiro
+//    guard let product = dict[id] else { return "Nenhum produto encontrado"}
+//
+//    return product
+//}
+//
+//print(fetchProductById(id: 1))
+
+//MARK: SWITCH CASE
+
+func discount(productId: Int) -> Double {
+    switch(productId) {
+    case 1:
+        return 0.2
+    case 2:
+        return 0.4
+    default:
+        return 0.0
+    }
 }
 
-print(fetchProductById(id: 1))
-    
+let d = discount(productId: 2)
+print("desconto: \(Int(d * 100)) %")
+
+func printProduct(name: String) {
+    var message = ""
+    switch(name) {
+    case "iPhone":
+        message = "Produto usando o S.O iOS"
+        break
+    case "Motorola" :
+        message = "Produto usando o S.O Android"
+        break
+    default :
+        message = "Nenhum produto encontrado"
+        break
+    }
+    print(message)
+}
+
+printProduct(name: "XYZ")
