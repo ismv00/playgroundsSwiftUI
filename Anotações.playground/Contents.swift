@@ -169,18 +169,43 @@ print(newSet)
 //let res1 = megaSenaGenerator4(total: nil, maxNumber: nil)
 //print(res1)
 
-var username: String? = nil
-var phone: String? = nil
-var password: String = "123123"
+//var username: String? = nil
+//var phone: String? = nil
+//var password: String = "123123"
+//
+//func login(username: String?, phone: String?, password: String) {
+//    if let phone = phone {
+//        print("Faça login com o telefone \(phone)")
+//    } else if let username = username {
+//        print("Faça login com o username \(username)")
+//    }else {
+//        print("Error! Por favor adicione um telefone ou usuário")
+//    }
+//}
+//
+//login(username: username, phone: phone, password: password)
 
-func login(username: String?, phone: String?, password: String) {
-    if let phone = phone {
-        print("Faça login com o telefone \(phone)")
-    } else if let username = username {
-        print("Faça login com o username \(username)")
-    }else {
-        print("Error! Por favor adicione um telefone ou usuário")
-    }
+//MARK: GUARD
+
+func fetchProductById(id: Int) -> String {
+    let dict = [
+        1: "iPhone",
+        2: "Macbook",
+        3: "iPad"
+    ]
+    
+//    //Primeiro se trata a exceção
+//    if let product = dict[id] {
+//        return product
+//    }else {
+//        return "nenhum produto encontrado"
+//    }
+    
+    // Com o guard let o sucesso é lido primeiro
+    guard let product = dict[id] else { return "Nenhum produto encontrado"}
+    
+    return product
 }
 
-login(username: username, phone: phone, password: password)
+print(fetchProductById(id: 1))
+    
