@@ -211,34 +211,98 @@ print(newSet)
 
 //MARK: SWITCH CASE
 
-func discount(productId: Int) -> Double {
-    switch(productId) {
-    case 1:
-        return 0.2
-    case 2:
-        return 0.4
-    default:
-        return 0.0
+//func discount(productId: Int) -> Double {
+//    switch(productId) {
+//    case 1:
+//        return 0.2
+//    case 2:
+//        return 0.4
+//    default:
+//        return 0.0
+//    }
+//}
+//
+//let d = discount(productId: 2)
+//print("desconto: \(Int(d * 100)) %")
+//
+//func printProduct(name: String) {
+//    var message = ""
+//    switch(name) {
+//    case "iPhone":
+//        message = "Produto usando o S.O iOS"
+//        break
+//    case "Motorola" :
+//        message = "Produto usando o S.O Android"
+//        break
+//    default :
+//        message = "Nenhum produto encontrado"
+//        break
+//    }
+//    print(message)
+//}
+//
+//printProduct(name: "XYZ")
+
+
+//MARK: STRUCT
+
+//Model capaz de gerar multiplos usuários no sistema usando a mesma estrutura
+//struct User {
+//    //Propriedades do usuário
+//    let name: String
+//    let lastName: String?
+//    let isAdmin: Bool
+//    var ranking: Int
+//
+//
+//    //Metodos também chamada de funções
+//    func getFullName() -> String {
+//        var fullName = name
+//        if let lastName = lastName {
+//            fullName += " \(lastName)"
+//        }
+//
+//        return fullName
+//    }
+//
+//    //Necessário para que seja permitido alterar uma struct
+//    mutating func resetRanking() {
+//        ranking = 0
+//        print("O Ranking foi resetado")
+//    }
+//}
+//
+////Instanciando/Criando um objeto
+//var userA = User(name: "Igor", lastName: "Menezes", isAdmin: true, ranking: 10)
+//let userB = User(name: "Bruce", lastName: nil, isAdmin: false, ranking: 2)
+//
+//let resA = userA.getFullName()
+//print(resA)
+//
+//userA.resetRanking()
+//print(userA)
+
+//MARK: Alterando de struct para Class
+
+//Quando se cria uma class, e se altera o objeto, ela não faz uma cópia, ela simplesmente muda a estrutura. Diferente da Struct que mantem o objeto inicial e faz uma cópia com o novo objeto instanciado.
+
+class Person {
+    let name : String
+    var cpf: Int
+    
+    init(n: String, c: Int) {
+        name = n
+        cpf = c
     }
 }
 
-let d = discount(productId: 2)
-print("desconto: \(Int(d * 100)) %")
+let personA = Person(n: "Igor", c: 123456445)
+var personB = personA
 
-func printProduct(name: String) {
-    var message = ""
-    switch(name) {
-    case "iPhone":
-        message = "Produto usando o S.O iOS"
-        break
-    case "Motorola" :
-        message = "Produto usando o S.O Android"
-        break
-    default :
-        message = "Nenhum produto encontrado"
-        break
-    }
-    print(message)
-}
+print(personA.cpf)
+print(personB.cpf)
 
-printProduct(name: "XYZ")
+personB.cpf = 99999999
+
+print(personA.cpf)
+print(personB.cpf)
