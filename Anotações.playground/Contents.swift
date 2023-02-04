@@ -211,6 +211,7 @@ print(newSet)
 
 //MARK: SWITCH CASE
 
+<<<<<<< HEAD
 //func discount(productId: Int) -> Double {
 //    switch(productId) {
 //    case 1:
@@ -293,6 +294,16 @@ class Person {
     init(n: String, c: Int) {
         name = n
         cpf = c
+=======
+/*func discount(productId: Int) -> Double {
+    switch(productId) {
+    case 1:
+        return 0.2
+    case 2:
+        return 0.4
+    default:
+        return 0.0
+>>>>>>> 548fcb36504d7cd5d068c0c417359abc990ad0e6
     }
 }
 
@@ -302,7 +313,50 @@ var personB = personA
 print(personA.cpf)
 print(personB.cpf)
 
+<<<<<<< HEAD
 personB.cpf = 99999999
 
 print(personA.cpf)
 print(personB.cpf)
+=======
+printProduct(name: "XYZ") */
+
+//MARK: FUNCTIONS TYPE
+
+func sum(x:Int, y: Int) -> Int {
+    return x + y 
+}
+
+func divide(x: Int, y: Int) -> Int {
+    return x /y
+}
+
+// Chamando uma função dentro de outra função
+func calc(a: Int, b: Int, operarion: (Int, Int) -> Int) {
+    print("a: \(a)")
+    print("b: \(b)")
+    let result = operation(a, b)
+    print("resultado: \(result)")
+}
+
+// Forma enxuta de realizar o operation
+calc(a:5, b:5, operation: { a, b in 
+                        a - b
+                          }}
+
+
+// Caso de uso: Chamada em um servidor para verificar se está no ar. 
+func callServer(url: String, callback: (Int) -> () ) {
+    let code = 200
+    callback(code)
+}
+
+callServer(url: "www.meusite.com.br") { code in 
+                                       if code == 200 {
+                                           print("Chamada com sucesso no servidor, mostrar próxima tela")
+                                       } else {
+                                           print("ops!, algo deu errado na chamada")
+                                       }
+                                      }
+}
+>>>>>>> 548fcb36504d7cd5d068c0c417359abc990ad0e6
