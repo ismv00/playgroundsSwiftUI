@@ -212,6 +212,7 @@ print(newSet)
 //MARK: SWITCH CASE
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //func discount(productId: Int) -> Double {
 //    switch(productId) {
 //    case 1:
@@ -295,6 +296,8 @@ class Person {
         name = n
         cpf = c
 =======
+=======
+>>>>>>> 548fcb36504d7cd5d068c0c417359abc990ad0e6
 /*func discount(productId: Int) -> Double {
     switch(productId) {
     case 1:
@@ -327,6 +330,17 @@ func sum(x:Int, y: Int) -> Int {
     return x + y 
 }
 
+<<<<<<< HEAD
+=======
+printProduct(name: "XYZ") */
+
+//MARK: FUNCTIONS TYPE
+
+func sum(x:Int, y: Int) -> Int {
+    return x + y 
+}
+
+>>>>>>> 548fcb36504d7cd5d068c0c417359abc990ad0e6
 func divide(x: Int, y: Int) -> Int {
     return x /y
 }
@@ -359,4 +373,7 @@ callServer(url: "www.meusite.com.br") { code in
                                        }
                                       }
 }
+<<<<<<< HEAD
+>>>>>>> 548fcb36504d7cd5d068c0c417359abc990ad0e6
+=======
 >>>>>>> 548fcb36504d7cd5d068c0c417359abc990ad0e6
